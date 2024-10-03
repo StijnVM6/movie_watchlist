@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="./views/css/movieDetails.css">
+</head>
+
+<body>
+
+    <div class="movie-container">
+        <div class="movie-poster">
+            <img id="posterImage" src="" alt="Movie Poster">
+        </div>
+        <div class="movie-details">
+            <h1 id="movieTitle">Movie Title</h1>
+            <p><strong>Year:</strong> <span id="movieYear"></span></p>
+            <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
+            <p><strong>Director:</strong> <span id="movieDirector"></span></p>
+            <p><strong>Plot:</strong> <span id="moviePlot"></span></p>
+            <p><strong>Runtime:</strong> <span id="Runtime"></span></p>
+            <p><strong>IMDB Rating:</strong> <span id="movieRating"></span>
+                Number of votes: <span id="imdbVotes"></span></p>
+            <strong>Metascore</strong> <span id="Metascore"></span></p>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="imdbButton">Visit IMDB Page</button>
+        <button id="addToWatchlistButton">Add to Watchlist</button>
+        <button class="close-button">Close</button>
+    </div>
+
+    <!-- Dynamically load the function -->
+    <script type="module">
+        import showMovieDetails from "./js/showMovieDetails.js";
+        showMovieDetails(); // Call the function to fetch and display movie details
+    </script>
+</body>
+
+</html>

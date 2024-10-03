@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    position: relative;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Styles for the suggestions list */
+.suggestions-list {
+    list-style-type: none;
+    margin-top: 5px;
+    padding: 0;
+    width: 300px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    /* Hidden by default */
+    position: relative;
+}
+
+.suggestions-list li {
+    padding: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}

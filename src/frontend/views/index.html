@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+    <link rel="stylesheet" href="./views/css/styles.css">
+</head>
+
+<body>
+
+    <h1>Movie Watchlist</h1>
+
+    <!-- Search field with dynamic suggestions -->
+    <input type="text" id="searchField" placeholder="Search movies..." onfocus="this.placeholder = ''"
+        onblur="this.placeholder = 'Search movies...'" oninput="searchMovies()">
+
+    <!-- Suggestions container -->
+    <ul id="suggestions" class="suggestions-list"></ul>
+
+    <!-- Dynamically load the function -->
+    <script type="module">
+        import clearSearch from "./js/clearSearch.js";
+        clearSearch();
+        import searchMovies from "./js/searchMovies.js";
+        window.searchMovies = searchMovies; // Expose the function to the global scope
+    </script>
+
+</body>
+
+</html>

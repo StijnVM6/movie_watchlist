@@ -1,0 +1,20 @@
+{
+    "movies": [
+        {
+            "id": "f0123456-78ab-cdef-0123-456789abcdef",
+            "imdb_id": "tt5672290",
+            "title": "The First Omen",
+            "year": "2024",
+            "genre": "Horror",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMzI2YmYwZWYtNzgzNi00ODU2LWE1NWMtZmY4NTJjYzIyNTIxXkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_SX300.jpg"
+        },
+        {
+            "id": "e2345678-90ab-cdef-0123-456789abcdef",
+            "imdb_id": "tt1375666",
+            "title": "Inception",
+            "year": "2010",
+            "genre": "Action, Adventure, Sci-Fi",
+            "poster": "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg"
+        }
+    ]
+}
