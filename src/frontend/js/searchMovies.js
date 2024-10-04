@@ -19,12 +19,12 @@ const searchMovies = async () => {
 
     // Do the search
     try {
-        // Fetch data from the OMDB API
-        const data = await omdbFetchBy_title(query);
+        // Fetch movieData from the OMDB API
+        const movieData = await omdbFetchBy_title(query);
 
         // Check if the response contains movies
-        if (data.Response === "True") {
-            const movies = data.Search;
+        if (movieData.Response === "True") {
+            const movies = movieData.Search;
             suggestionsContainer.innerHTML = "";
 
             // Display suggestions for matching movies
@@ -46,7 +46,7 @@ const searchMovies = async () => {
             suggestionsContainer.style.display = "none";
         }
     } catch (err) {
-        console.error('Error fetching movie data:', err);
+        console.error('Error fetching movie movieData:', err);
         suggestionsContainer.style.display = "none";
     }
 };

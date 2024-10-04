@@ -2,13 +2,15 @@ import express from "express";
 import "dotenv/config";
 import path from "path";
 // import fetch from "node-fetch";
-import omdbRouter from "./src/backend/routes/movies/omdb.js";
+import omdbRouter from "./src/backend/routes/omdb.js";
+import moviesRouter from "./src/backend/routes/movies.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use("/omdb", omdbRouter);
+app.use("/movies", moviesRouter)
 
 // Create __dirname variable
 const __dirname = path.resolve();
