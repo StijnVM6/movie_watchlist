@@ -13,14 +13,22 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model MovieType {
-  id   String @id @default(uuid())
-  name String @unique
+model User {
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
+}
+
+model Type {
+  id     String  @id @default(uuid())
+  name   String  @unique
+  movies Movie[] // Implicit relation to many movies
 }
 
 model Genre {
-  id   String @id @default(uuid())
-  name String @unique
+  id     String  @id @default(uuid())
+  name   String  @unique
+  movies Movie[] // Implicit relation to many movies
 }
 
 model Movie {
@@ -28,7 +36,6 @@ model Movie {
   imdbId     String @unique
   title      String
   year       String
-  genre      String
   poster     String
   runtime    String
   director   String
@@ -36,4 +43,11 @@ model Movie {
   imdbRating String
   imdbVotes  String
   metascore  String
+
+  genre Genre[] // Many-to-Many relation with Genre
+
+  type   Type   @relation(fields: [typeId], references: [id])
+  typeId String // Explicit relation field to the type id
+
+  @@index([typeId])
 }

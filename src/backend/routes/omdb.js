@@ -1,9 +1,10 @@
 import express from "express";
 import "dotenv/config";
+import authMiddleware from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get("/searchByTitle/:title", async (req, res) => {
+router.get("/searchByTitle/:title", authMiddleware, async (req, res) => {
     const { title } = req.params;
     const apiKey = process.env.OMDB_API_KEY;
 
@@ -17,7 +18,7 @@ router.get("/searchByTitle/:title", async (req, res) => {
     }
 });
 
-router.get("/searchById/:id", async (req, res) => {
+router.get("/searchById/:id", authMiddleware, async (req, res) => {
     const { id } = req.params;
     const apiKey = process.env.OMDB_API_KEY;
 

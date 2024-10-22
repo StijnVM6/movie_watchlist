@@ -12,19 +12,42 @@
 
     <h1>Movie Watchlist</h1>
 
-    <!-- Search field with dynamic suggestions -->
-    <input type="text" id="searchField" placeholder="Search movies..." onfocus="this.placeholder = ''"
-        onblur="this.placeholder = 'Search movies...'" oninput="searchMovies()">
+    <div class="search-container">
+        <!-- Search field with dynamic suggestions -->
+        <input type="text" id="searchField" placeholder="Search movies..." onfocus="this.placeholder = ''"
+            onblur="this.placeholder = 'Search movies...'" oninput="searchMovies()">
 
-    <!-- Suggestions container -->
-    <ul id="suggestions" class="suggestions-list"></ul>
+        <!-- Suggestions container -->
+        <ul id="suggestions" class="suggestions-list"></ul>
+    </div>
+
+    <div class="button-container">
+        <button type=button id="viewWatchlistButton">View Watchlist</button>
+        <button type=button id="logoutButton">Logout</button>
+    </div>
 
     <!-- Dynamically load the function -->
     <script type="module">
+        // Check Auth
+        import checkAuth from "./js/checkAuth.js";
+        checkAuth();
+
+        // search function
         import clearSearch from "./js/clearSearch.js";
         clearSearch();
         import searchMovies from "./js/searchMovies.js";
         window.searchMovies = searchMovies; // Expose the function to the global scope
+
+        // watchlist redirection
+        document.getElementById("viewWatchlistButton").addEventListener("click", () => {
+            window.location.href = "watchlist";
+        });
+
+        // logout logic
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            localStorage.removeItem("jwtToken");
+            window.location.href = "/login"; // Redirect to login page
+        });
     </script>
 
 </body>

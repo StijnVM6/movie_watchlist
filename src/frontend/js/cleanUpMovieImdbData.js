@@ -25,5 +25,6 @@ const cleanUpMovieImdbData = (movie) => {
     cleanedMovie.Runtime = convertRuntime(cleanedMovie.Runtime);
 
     return cleanedMovie;
-}
+};
+
 export default cleanUpMovieImdbData;

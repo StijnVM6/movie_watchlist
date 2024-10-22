@@ -41,7 +41,7 @@ button {
 
 #imdbButton {
     background-color: #fdd835;
-    color: black;
+    color: white;
     border: none;
     border-radius: 5px;
     margin-right: 10px;
@@ -49,10 +49,10 @@ button {
 }
 
 #imdbButton:hover {
-    background-color: #fdd835;
+    background-color: #e0a100dc;
 }
 
-#addToWatchlistButton {
+#removeFromWatchlistButton {
     background-color: #57ce5b;
     color: white;
     border: none;
@@ -61,7 +61,7 @@ button {
     transition: background-color 0.3s ease;
 }
 
-#addToWatchlistButton:hover {
+#removeFromWatchlistButton:hover {
     background-color: #43a048b6;
 }
 

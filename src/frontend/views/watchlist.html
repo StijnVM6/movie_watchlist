@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Watchlist</title>
+    <link rel="stylesheet" href="./views/css/watchlist.css">
+</head>
+
+<body>
+    <h1>My Watchlist</h1>
+
+    <!-- Option bar with a sort and group functions -->
+    <div class="option-bar">
+        <button type=button id="returnToHomepageButton">Return to homepage</button>
+        <label for="sortBy">Sort by:</label>
+        <select id="sortBy">
+            <option value="year">Year (Descending)</option>
+            <option value="year">Year (Ascending)</option>
+        </select>
+        <label for="groupBy">Group by:</label>
+        <select id="groupBy">
+            <option value="genre">Genre</option>
+        </select>
+    </div>
+
+    <!-- Watchlist Container -->
+    <div class="movie-grid" id="watchlistContainer"></div>
+
+    <!-- Script -->
+    <script type="module">
+        // Check Auth
+        import checkAuth from "./js/checkAuth.js";
+        checkAuth();
+
+        // homepage redirection
+        document.getElementById("returnToHomepageButton").addEventListener("click", () => {
+            window.location.href = "/";
+        });
+        // watchlist redirection
+        import showWatchlist from "./js/showWatchlist.js";
+        showWatchlist();
+    </script>
+</body>
+
+</html>

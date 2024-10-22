@@ -1,5 +1,5 @@
 import omdbFetchBy_imdb_id from "../omdb/omdbFetchBy_imdb_id.js";
-import addMovieToWatchlist from "./addMovieToWatchlist.js";
+import addToWatchlist from "./fetch/addToWatchlist.js";
 
 const showMovieDetails = async () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -13,6 +13,7 @@ const showMovieDetails = async () => {
         document.getElementById("movieYear").textContent = movieData.Year;
         document.getElementById("movieGenre").textContent = movieData.Genre;
         document.getElementById("movieRuntime").textContent = movieData.Runtime;
+        document.getElementById("movieType").textContent = movieData.Type;
         document.getElementById("movieDirector").textContent = movieData.Director;
         document.getElementById("moviePlot").textContent = movieData.Plot;
         document.getElementById("movieRating").textContent = movieData.imdbRating;
@@ -29,7 +30,7 @@ const showMovieDetails = async () => {
 
     // Add to Watchlist button logic
     document.getElementById("addToWatchlistButton").addEventListener("click", () => {
-        addMovieToWatchlist(movieData);
+        addToWatchlist(movieData);
     });
 
     // Close button logic to navigate back to the search page

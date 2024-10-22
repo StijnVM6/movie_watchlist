@@ -1,8 +1,17 @@
+import getAuthToken from "../js/getAuthToken.js";
+
 const omdbFetchBy_title = async (title) => {
-    const response = await fetch(`/omdb/searchByTitle/${title}`);
-    // console.log("Response status:", response.status);
+    const token = getAuthToken();
+
+    const response = await fetch(`/omdb/searchByTitle/${title}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `${token}`,
+        },
+    });
+
     const data = await response.json();
-    // console.log("Data:", data);
     return data;
 };
 

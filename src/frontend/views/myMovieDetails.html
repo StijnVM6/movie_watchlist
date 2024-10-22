@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Details</title>
-    <link rel="stylesheet" href="./views/css/movieDetails.css">
+    <link rel="stylesheet" href="./views/css/myMovieDetails.css">
 </head>
 
 <body>
@@ -26,13 +26,13 @@
             <p><strong>IMDB Rating:</strong> <span id="movieRating"></span>
                 Number of votes: <span id="movieImdbVotes"></span>
             </p>
-            <strong>Metascore</strong> <span id="movieMetascore"></span></p>
+            <strong>Metascore:</strong> <span id="movieMetascore"></span></p>
         </div>
     </div>
 
     <div class="button-container">
         <button type=button id="imdbButton">Visit IMDB Page</button>
-        <button type=button id="addToWatchlistButton">Add to Watchlist</button>
+        <button type=button id="removeFromWatchlistButton">Remove from Watchlist</button>
         <button type=button class="close-button">Close</button>
     </div>
 
@@ -41,8 +41,8 @@
         import checkAuth from "./js/checkAuth.js";
         checkAuth();
         // Call the function to fetch and display movie details
-        import showMovieDetails from "./js/showMovieDetails.js";
-        showMovieDetails(); 
+        import showMyMovieDetails from "./js/showMyMovieDetails.js";
+        showMyMovieDetails(); 
     </script>
 </body>
 

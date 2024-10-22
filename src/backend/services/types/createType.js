@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import formatGenre from "../genres/formatGenre.js";
 
-const createMovie = async (
+const createType = async (
     imdbID,
     Title,
     Year,
@@ -17,16 +17,16 @@ const createMovie = async (
 ) => {
     const prisma = new PrismaClient();
 
-    // check if movie already exists
-    const existCheck = await prisma.movie.findUnique({
+    // check if type already exists
+    const existCheck = await prisma.type.findUnique({
         where: { imdbId: imdbID }
     });
 
-    if (existCheck === null) { // movie is not in watchlist 
+    if (existCheck === null) { // type is not in watchlist 
         const formattedGenre = formatGenre(Genre);
 
-        // create movie
-        const newMovie = await prisma.movie.create({
+        // create type
+        const newType = await prisma.type.create({
             data: {
                 imdbId: imdbID,
                 title: Title,
@@ -54,11 +54,11 @@ const createMovie = async (
             }
         });
 
-        return newMovie;
-    } else { // movie already is in watchlist
-        console.log(`Movie is already in the watchlist with id: ${existCheck.id}`);
+        return newType;
+    } else { // type already is in watchlist
+        console.log(`Type is already in the watchlist with id: ${existCheck.id}`);
         return null;
     }
 };
 
-export default createMovie;
+export default createType;

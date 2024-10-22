@@ -5,7 +5,11 @@ const getMovieById = async (id) => {
     const prisma = new PrismaClient();
 
     const movie = await prisma.movie.findUnique({
-        where: { id: id }
+        where: { id: id },
+        include: {
+            genre: true,  // Include the related genre data
+            type: true, // Include the related type data
+        },
     });
 
     if (!movie) {

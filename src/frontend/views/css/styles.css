@@ -23,7 +23,35 @@ input[type="text"]:focus {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
 
-/* Styles for the suggestions list */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#searchField {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 400px;
+}
+
 .suggestions-list {
     list-style-type: none;
     margin-top: 5px;
@@ -47,4 +75,37 @@ input[type="text"]:focus {
 
 .suggestions-list li:hover {
     background-color: #f0f0f0;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#viewWatchlistButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#viewWatchlistButton:hover {
+    background-color: #0056b3;
+}
+
+#logoutButton {
+    /* background-color: #f44336;
+    color: white; */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 40px;
+}
+
+#logoutButton:hover {
+    background-color: #e53835b6;
 }
